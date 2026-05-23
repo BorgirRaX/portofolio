@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Poppins", sans-serif;
+  --font-sans: "Poppins", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  --font-handwritten: "Caveat", cursive;
+
+  --color-background: #0f1721;
+  --color-card: #0a0f18;
+  --color-primary: #4a9ecc;
+  --color-ice-blue: #d4eeff;
+  --color-soft-navy: #152232;
+  --color-dark-navy: #060c14;
+  --color-accent-white: #f0f8ff;
+  --color-text-muted: #7ec4e8;
+
+  --animate-fade-in-up: fade-in-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Global Reset & Base Styles */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  background-color: #0f1721;
+  color: #f0f8ff;
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+  line-height: 1.8;
+  transition: background-color 0.4s cubic-bezier(0.16, 1, 0.3, 1), color 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Light Mode Overrides */
+html.light body {
+  background-color: #f0f8ff;
+  color: #060c14;
+}
+
+html.light {
+  --color-background: #f0f8ff;
+  --color-card: #e1edf5;
+  --color-primary: #2d7caa;
+  --color-ice-blue: #060c14;
+  --color-soft-navy: #b9d3e8;
+  --color-dark-navy: #ffffff;
+  --color-accent-white: #060c14;
+  --color-text-muted: #2d5a75;
+}
+
+html.light body {
+  background-color: var(--color-background);
+  color: var(--color-accent-white);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #060c14;
+}
+
+html.light ::-webkit-scrollbar-track {
+  background: #e1edf5;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #152232;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #4a9ecc;
+}
+
+/* Selection Highlight */
+::selection {
+  background: rgba(74, 158, 204, 0.2);
+  color: #f0f8ff;
+}
+
+/* Custom desktop cursor styling (Cinematic follow) */
+.custom-cursor {
+  width: 6px;
+  height: 6px;
+  background-color: #4a9ecc;
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1), height 0.3s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 0 8px rgba(74, 158, 204, 0.4);
+}
+
+.custom-cursor-hover {
+  width: 20px;
+  height: 20px;
+  background-color: rgba(74, 158, 204, 0.1);
+  border: 1px solid #4a9ecc;
+  box-shadow: 0 0 12px rgba(74, 158, 204, 0.2);
+}

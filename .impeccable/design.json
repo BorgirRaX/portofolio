@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-05-23T15:00:00Z",
+  "title": "Design System: jimy. Cinematic Design System",
+  "extensions": {
+    "colorMeta": {
+      "primary": { "role": "primary", "displayName": "Primary Blue", "canonical": "#4a9ecc", "tonalRamp": ["#070f14", "#0e1f29", "#1a3a4c", "#2c6280", "#4a9ecc", "#7abfe5", "#add6ef", "#e0f0fa"] },
+      "neutral-bg": { "role": "neutral", "displayName": "Background", "canonical": "#0f1721", "tonalRamp": ["#030507", "#06090d", "#0c121a", "#0f1721", "#334c6e", "#6484b3", "#a3b9d9", "#e2ebf5"] },
+      "neutral-card": { "role": "neutral", "displayName": "Surface Card", "canonical": "#0a0f18", "tonalRamp": ["#020305", "#04060a", "#080c13", "#0a0f18", "#22324f", "#4f6a96", "#8da3c4", "#d7e0ed"] },
+      "ice-blue": { "role": "accent", "displayName": "Ice Blue", "canonical": "#d4eeff", "tonalRamp": ["#151f26", "#2b3e4c", "#567d99", "#8bbbe0", "#d4eeff", "#e0f2ff", "#edffff", "#f7ffff"] },
+      "soft-navy": { "role": "accent", "displayName": "Soft Navy", "canonical": "#152232", "tonalRamp": ["#030507", "#080d14", "#101925", "#152232", "#355173", "#628bbf", "#a3c0e5", "#e2ecf7"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display Font", "purpose": "Bold tight headers with cinematic impact." },
+      "body": { "displayName": "Body Font", "purpose": "Airy descriptions with line-height 1.8 and max-width 65ch." },
+      "label": { "displayName": "Label Font", "purpose": "Clean JetBrains Mono metadata labels." }
+    },
+    "shadows": [
+      { "name": "subtle-glow-accent", "value": "0 0 25px rgba(74, 158, 204, 0.08)", "purpose": "Extremely light glow under card hover states." }
+    ],
+    "motion": [
+      { "name": "ease-standard", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Cinematic exponential ease-out for hovers and reveals." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Cinematic Bento Card",
+      "kind": "card",
+      "description": "Bento Grid card asimetris dengan spasi lega, visual pratinjau besar, dan glow hover mikro.",
+      "html": "<div class=\"ds-bento-card-cinematic\"><h3 class=\"ds-card-title-cine\">Naka Coffee</h3><p class=\"ds-card-desc-cine\">HTML · CSS · JavaScript</p></div>",
+      "css": ".ds-bento-card-cinematic { background: #0a0f18; border: 1px solid #152232; border-radius: 24px; padding: 32px; cursor: pointer; transition: border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); } .ds-bento-card-cinematic:hover { border-color: #4a9ecc; box-shadow: 0 0 25px rgba(74, 158, 204, 0.08); transform: scale(1.01); } .ds-card-title-cine { font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 1.25rem; color: #f0f8ff; margin: 0 0 8px 0; } .ds-card-desc-cine { font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; color: #7ec4e8; margin: 0; }"
+    },
+    {
+      "name": "Minimal Button Pill",
+      "kind": "button",
+      "description": "Tombol aksi pill minimalis dengan border tipis Soft Navy dan hover mulus.",
+      "html": "<a class=\"ds-btn-pill-minimal\">Email</a>",
+      "css": ".ds-btn-pill-minimal { display: inline-block; padding: 12px 24px; border: 1px solid #152232; border-radius: 9999px; color: #4a9ecc; font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; text-transform: uppercase; text-align: center; cursor: pointer; transition: background 0.3s, border-color 0.3s, color 0.3s; } .ds-btn-pill-minimal:hover { background: #4a9ecc; border-color: #4a9ecc; color: #060c14; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Minimalist Cine-Slate",
+    "overview": "Sistem desain ini merangkum suasana sinematik yang tenang, berkarakter, dan sangat memperhatikan keterbacaan serta spasi kosong (spacing). Kami menghindari penumpukan semua efek visual sekaligus dan menggantinya dengan keindahan tipografi Poppins tebal berspasi rapat, latar belakang pekat yang teduh, spasi antarkomponen yang lapang, serta interaksi penunjuk arah yang super halus.",
+    "keyCharacteristics": [
+      "Cinematic Rhythm: Spasi kosong yang lega (xl dan xxl) serta ukuran display font tebal berspasi rapat untuk sensasi bioskop.",
+      "Low-Opacity Grid: Garis petak latar belakang tipis berpiksel rendah yang menyatu lembut dengan background gelap.",
+      "Subtle Interactions: Animasi yang sangat minim, glow redup maksimal 1x per section, kursor dengan inersia lag gerakan yang lembut."
+    ],
+    "rules": [
+      { "name": "The Single-Glow Rule", "body": "Efek bersinar (glow) hanya boleh muncul maksimal 1 kali dalam satu section utuh saat elemen disorot, dengan kepekatan sangat rendah.", "section": "colors" },
+      { "name": "The Airy Measure Rule", "body": "Semua kolom teks paragraf wajib memiliki batas lebar maksimal 65ch agar mata pengunjung tidak lelah saat membaca.", "section": "typography" },
+      { "name": "The Border-Led Depth Rule", "body": "Kedalaman visual hanya digambarkan lewat garis pembatas 1px berwarna #152232. Bayangan tebal dilarang keras.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do atur garis grid latar belakang dengan opacity super rendah agar hanya terlihat samar.",
+      "Do pastikan custom kursor memiliki jeda inersia lag gerakan yang lembut untuk rasa cinematic.",
+      "Do gunakan batas kolom max-width: 65ch pada paragraf utama About."
+    ],
+    "donts": [
+      "Don't gunakan terlalu banyak partikel melayang, efek neon berlebih, atau hiasan dekoratif yang membuat sistem bising.",
+      "Don't gunakan bayangan hitam tebal konvensional; pertahankan layout bersih.",
+      "Don't buat grid Bento berskala simetris; susun 3 proyek secara asimetris dengan spasi lega.",
+      "Don't biarkan teks paragraf berjalan terlalu panjang melampaui lebar kolom baca ideal."
+    ]
+  }
+}
