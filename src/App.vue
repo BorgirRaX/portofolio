@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
 import NavBar from './components/NavBar.vue'
 import HeroSection from './components/HeroSection.vue'
@@ -14,15 +14,15 @@ const cursorX = ref(0)
 const cursorY = ref(0)
 const isHovering = ref(false)
 const isDesktop = ref(false)
-let animationFrameId: number | null = null
+let animationFrameId = null
 
-const updateMouse = (e: MouseEvent) => {
+const updateMouse = (e) => {
   mouseX.value = e.clientX
   mouseY.value = e.clientY
 }
 
-const checkHover = (e: MouseEvent) => {
-  const target = e.target as HTMLElement
+const checkHover = (e) => {
+  const target = e.target
   if (
     target.tagName === 'A' ||
     target.tagName === 'BUTTON' ||

@@ -1,7 +1,7 @@
-<script setup lang="ts">
+<script setup>
 import { ref } from 'vue'
 
-const hoveredProject = ref<number | null>(null)
+const hoveredProject = ref(null)
 
 const projects = [
   {
@@ -44,7 +44,7 @@ const projects = [
 </script>
 
 <template>
-  <section id="projects" class="py-24 md:py-32 bg-background border-t border-soft-navy/40 relative">
+  <section id="projects" class="py-24 md:py-32 bg-background relative">
     <!-- SVG Analog Noise / Grain Overlay -->
     <svg class="absolute inset-0 w-full h-full opacity-[0.012] pointer-events-none z-0" xmlns="http://www.w3.org/2000/svg">
       <filter id="grainyNoiseProjects">

@@ -67,7 +67,7 @@
             <circle cx="21" cy="80" r="2.2" fill="currentColor" opacity="0.85" />
           </svg>
           <span class="font-mono text-xs font-semibold tracking-widest text-primary uppercase mb-4">
-            // ABOUT ME
+            // MY LITLE STORY
           </span>
 
           <div class="relative w-full">
@@ -88,9 +88,9 @@
             <h2
               class="font-display font-bold text-2xl md:text-4xl text-accent-white mb-8 leading-[1.2] tracking-tight"
             >
-              I make websites<br />that people actually<br />
+              making websites<br />instead of<br />
               <span class="relative inline-block text-primary">
-                enjoy using.
+                touching grass.
                 <span
                   class="absolute left-0 -bottom-2 w-full h-[4px] bg-primary/45 rounded-full"
                 ></span>
@@ -167,7 +167,7 @@
               />
             </svg>
             <span class="font-handwritten text-sm text-text-muted/80 tracking-wide text-left"
-              >caffeine<br />&amp; code</span
+              >coffe<br />&amp; code</span
             >
           </div>
           <div
@@ -264,9 +264,9 @@
                   class="relative w-full aspect-square overflow-hidden bg-neutral-100 rounded-sm"
                 >
                   <img
-                    src="../assets/profil_pic1.jpeg"
+                    src="../assets/profil_pic1.png"
                     alt="Jimy Profile"
-                    class="w-full h-full object-cover filter contrast-[1.02] grayscale-10 group-hover:grayscale-0 transition-all duration-500"
+                    class="w-full h-full object-contain filter contrast-[1.02] grayscale-10 saturate-[0.96] brightness-[0.98] group-hover:grayscale-0 transition-all duration-500"
                     loading="lazy"
                   />
                   <div
@@ -274,16 +274,11 @@
                   ></div>
                 </div>
                 <div class="mt-4 text-center select-none">
-                  <h4
+                  <h2
                     class="font-display font-bold text-sm text-neutral-900 tracking-wide uppercase leading-none"
                   >
                     JIMY.
-                  </h4>
-                  <p
-                    class="font-mono text-[8px] font-semibold text-primary tracking-widest mt-1 uppercase"
-                  >
-                    FRONTEND DEVELOPER
-                  </p>
+                </h2>
                   <p class="font-mono text-[7px] text-neutral-500 tracking-wide mt-1">
                     FARMER &lt;/&gt; COFFEE &lt;/&gt; CODE
                   </p>
@@ -291,14 +286,14 @@
                 <img
                   src="../assets/accent.png"
                   alt="Pixel Burger Mascot Sticker"
-                  class="absolute -right-4 -bottom-4 w-16 h-16 object-contain rotate-14 hover:-rotate-6 hover:scale-110 transition-all duration-500 pointer-events-auto z-30"
+                  class="absolute -right-4 -bottom-4 w-16 h-16 object-contain rotate-14 opacity-90 saturate-90 brightness-95 drop-shadow-sm hover:-rotate-6 hover:scale-110 transition-all duration-500 pointer-events-auto z-30"
                 />
               </div>
             </div>
             <div class="border-t border-soft-navy/50 pt-3.5 z-10 space-y-2.5">
               <div class="flex justify-between items-center text-[10px] font-mono">
                 <span class="text-text-muted uppercase">BORN IN</span>
-                <span class="text-ice-blue">Kalimantan</span>
+                <span class="text-ice-blue">Temanggung</span>
               </div>
               <div class="flex justify-between items-center text-[10px] font-mono">
                 <span class="text-text-muted uppercase">BASED IN</span>
@@ -316,22 +311,5 @@
         </div>
       </div>
     </div>
-
-    <a
-      href="#skills"
-      class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-text-muted hover:text-primary transition-colors duration-500 z-10 opacity-70 hover:opacity-100"
-    >
-      <span class="font-handwritten text-sm tracking-wide text-text-muted/80">scroll down</span>
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        class="w-4 h-4 animate-bounce"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-        stroke-width="1.5"
-      >
-        <path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-      </svg>
-    </a>
   </section>
 </template>
