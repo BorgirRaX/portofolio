@@ -41,27 +41,44 @@ onUnmounted(() => {
   <header
     :class="[
       'fixed top-0 left-0 right-0 z-50 transition-all duration-500 border-b border-transparent',
-      scrolled ? 'bg-background/70 backdrop-blur-md py-3.5 border-soft-navy' : 'bg-transparent py-5'
+      scrolled
+        ? 'bg-background/70 backdrop-blur-md py-3.5 border-soft-navy'
+        : 'bg-transparent py-5',
     ]"
   >
     <div class="max-w-5xl mx-auto px-6 flex justify-between items-center">
       <!-- Logo -->
-      <a href="#" class="font-display font-bold text-base text-primary tracking-tight hover:opacity-85 transition-opacity">
+      <a
+        href="#"
+        class="font-display font-bold text-base text-primary tracking-tight hover:opacity-85 transition-opacity"
+      >
         jimy<span class="text-accent-white">.</span>
       </a>
 
       <!-- Desktop Links -->
       <nav class="hidden md:flex items-center gap-7">
-        <a href="#about" class="font-sans font-medium text-[13px] text-text-muted hover:text-accent-white tracking-wide transition-colors py-2">
+        <a
+          href="#about"
+          class="font-sans font-medium text-[13px] text-text-muted hover:text-accent-white tracking-wide transition-colors py-2"
+        >
           About
         </a>
-        <a href="#skills" class="font-sans font-medium text-[13px] text-text-muted hover:text-accent-white tracking-wide transition-colors py-2">
+        <a
+          href="#skills"
+          class="font-sans font-medium text-[13px] text-text-muted hover:text-accent-white tracking-wide transition-colors py-2"
+        >
           Skills
         </a>
-        <a href="#projects" class="font-sans font-medium text-[13px] text-text-muted hover:text-accent-white tracking-wide transition-colors py-2">
+        <a
+          href="#projects"
+          class="font-sans font-medium text-[13px] text-text-muted hover:text-accent-white tracking-wide transition-colors py-2"
+        >
           Projects
         </a>
-        <a href="#contact" class="font-sans font-medium text-[13px] text-text-muted hover:text-accent-white tracking-wide transition-colors py-2">
+        <a
+          href="#contact"
+          class="font-sans font-medium text-[13px] text-text-muted hover:text-accent-white tracking-wide transition-colors py-2"
+        >
           Contact
         </a>
       </nav>
@@ -75,12 +92,30 @@ onUnmounted(() => {
           aria-label="Toggle Theme"
         >
           <!-- Sun Icon (visible in Dark Mode) -->
-          <svg v-if="!isLight" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <svg
+            v-if="!isLight"
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-4 h-4"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
             <circle cx="12" cy="12" r="4" />
-            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
+            <path
+              d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"
+            />
           </svg>
           <!-- Moon Icon (visible in Light Mode) -->
-          <svg v-else xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <svg
+            v-else
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-4 h-4"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
             <path d="M12 3a6.36 6.36 0 0 0 9 9 9 9 0 1 1-9-9Z" />
           </svg>
         </button>
@@ -91,12 +126,28 @@ onUnmounted(() => {
           class="md:hidden p-2 rounded-lg border border-soft-navy text-text-muted hover:text-accent-white bg-card/20 transition-colors"
           aria-label="Toggle Mobile Menu"
         >
-          <svg v-if="!mobileMenuOpen" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <svg
+            v-if="!mobileMenuOpen"
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-4 h-4"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+          >
             <line x1="4" x2="20" y1="12" y2="12" />
             <line x1="4" x2="20" y1="6" y2="6" />
             <line x1="4" x2="20" y1="18" y2="18" />
           </svg>
-          <svg v-else xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <svg
+            v-else
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-4 h-4"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+          >
             <line x1="18" x2="6" y1="6" y2="18" />
             <line x1="6" x2="18" y1="6" y2="18" />
           </svg>

@@ -70,7 +70,9 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div class="relative bg-background text-accent-white min-h-screen font-sans selection:bg-primary/20 selection:text-accent-white">
+  <div
+    class="relative bg-background text-accent-white min-h-screen font-sans selection:bg-primary/20 selection:text-accent-white"
+  >
     <!-- Cinematic Subtle Mouse Cursor (Desktop Only) -->
     <div
       v-if="isDesktop"

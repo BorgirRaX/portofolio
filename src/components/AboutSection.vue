@@ -136,8 +136,8 @@
               <span
                 class="text-primary hover:text-primary/80 transition-colors duration-300 font-medium"
                 >pixel art</span
-              >, visual storytelling, and geeking out over the latest in Web3 and the
-              future of the internet.
+              >, visual storytelling, and geeking out over the latest in Web3 and the future of the
+              internet.
             </p>
           </div>
         </div>
@@ -278,7 +278,7 @@
                     class="font-display font-bold text-sm text-neutral-900 tracking-wide uppercase leading-none"
                   >
                     JIMY.
-                </h2>
+                  </h2>
                   <p class="font-mono text-[7px] text-neutral-500 tracking-wide mt-1">
                     FARMER &lt;/&gt; COFFEE &lt;/&gt; CODE
                   </p>

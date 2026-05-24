@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;700&display=swap');
 
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @theme {
-  --font-display: "Poppins", sans-serif;
-  --font-sans: "Poppins", sans-serif;
-  --font-mono: "JetBrains Mono", monospace;
-  --font-handwritten: "Caveat", cursive;
+  --font-display: 'Poppins', sans-serif;
+  --font-sans: 'Poppins', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --font-handwritten: 'Caveat', cursive;
 
   --color-background: #0f1721;
   --color-card: #0a0f18;
@@ -40,10 +40,12 @@ html {
 body {
   background-color: #0f1721;
   color: #f0f8ff;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   overflow-x: hidden;
   line-height: 1.8;
-  transition: background-color 0.4s cubic-bezier(0.16, 1, 0.3, 1), color 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transition:
+    background-color 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    color 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* Light Mode Overrides */
@@ -106,7 +108,10 @@ html.light ::-webkit-scrollbar-track {
   pointer-events: none;
   z-index: 9999;
   transform: translate(-50%, -50%);
-  transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1), height 0.3s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transition:
+    width 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+    height 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+    background-color 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   box-shadow: 0 0 8px rgba(74, 158, 204, 0.4);
 }
 
