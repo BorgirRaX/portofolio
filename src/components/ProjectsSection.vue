@@ -77,31 +77,7 @@ const projects = [
 </script>
 
 <template>
-  <section id="projects" class="py-18 md:py-24 bg-background relative overflow-hidden">
-    <svg
-      class="absolute inset-0 w-full h-full opacity-[0.012] pointer-events-none z-0"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <filter id="grainyNoiseProjects">
-        <feTurbulence
-          type="fractalNoise"
-          baseFrequency="0.75"
-          numOctaves="3"
-          stitchTiles="stitch"
-        />
-      </filter>
-      <rect width="100%" height="100%" filter="url(#grainyNoiseProjects)" />
-    </svg>
-    <div class="absolute inset-0 z-0 opacity-[0.08] pointer-events-none">
-      <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-        <pattern id="grid-large-subtle" width="120" height="120" patternUnits="userSpaceOnUse">
-          <line x1="0" y1="0" x2="120" y2="0" stroke="#4a9ecc" stroke-width="0.35" />
-          <line x1="0" y1="0" x2="0" y2="120" stroke="#4a9ecc" stroke-width="0.35" />
-        </pattern>
-        <rect width="100%" height="100%" fill="url(#grid-large-subtle)" />
-      </svg>
-    </div>
-
+  <section id="projects" class="pt-14 pb-16 md:pt-18 md:pb-20 bg-transparent relative overflow-hidden">
     <div class="max-w-5xl mx-auto px-6 relative z-10">
       <div class="mb-16 text-left max-w-2xl relative">
         <svg
@@ -500,6 +476,15 @@ const projects = [
           </div>
         </div>
       </div>
+    </div>
+
+    <!-- Subtle visual bridge element at bottom boundary transitioning to Contact -->
+    <div
+      class="absolute bottom-2 left-[28%] text-primary/25 pointer-events-none select-none animate-pulse-slow hidden md:block"
+    >
+      <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="12" cy="12" r="3.5" fill="currentColor" />
+      </svg>
     </div>
   </section>
 </template>

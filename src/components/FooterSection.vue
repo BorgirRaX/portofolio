@@ -1,35 +1,82 @@
+<script setup>
+// Compact cinematic ending scene footer
+</script>
+
 <template>
-  <footer class="bg-background border-t border-soft-navy/40 py-12 relative z-10">
-    <div class="max-w-5xl mx-auto px-6">
-      <!-- Upper Footer Row -->
+  <footer class="bg-transparent pt-6 pb-8 md:pt-8 md:pb-10 relative overflow-hidden z-10">
+    <!-- Cinematic background fade -->
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-primary/3 to-primary/10 dark:via-primary/10 dark:to-primary/20 pointer-events-none z-0"></div>
+
+    <!-- Soft fading hairline divider -->
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-2/3 max-w-xl h-[1px] bg-gradient-to-r from-transparent via-primary/15 dark:via-primary/25 to-transparent pointer-events-none z-0"></div>
+
+    <div class="max-w-5xl mx-auto px-6 relative z-10">
+      <!-- TOP ROW -->
       <div
-        class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 pb-8 border-b border-soft-navy/20"
+        class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 pb-6"
       >
-        <!-- Left Side -->
-        <div class="flex flex-col items-start text-left">
-          <span class="font-display font-semibold text-sm text-accent-white tracking-wide">
-            Built by BorgirRax.
+        <!-- Left Side: Bold logo-like text with tiny doodle star -->
+        <div class="flex items-center gap-2 select-none">
+          <span class="font-display font-bold text-base text-neutral-900 dark:text-accent-white tracking-tight">
+            Built by BorgirRaX.
           </span>
+          <!-- Tiny hand-drawn doodle star (Very subtle) -->
+          <svg
+            class="w-3.5 h-3.5 text-primary/35 animate-pulse-slow"
+            viewBox="0 0 100 100"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M 50,35 Q 50,50 65,50 Q 50,50 50,65 Q 50,50 35,50 Q 50,50 50,35 Z"
+              stroke="currentColor"
+              stroke-width="3"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
         </div>
 
-        <!-- Right Side -->
-        <div class="flex flex-col items-start md:items-end text-left md:text-right">
+        <!-- Right Side: Small subtle personal descriptor -->
+        <div>
           <p
-            class="font-sans text-[11px] text-text-muted tracking-wide max-w-[280px] md:max-w-none leading-relaxed"
+            class="font-sans text-[11px] text-text-muted/65 tracking-wide max-w-[280px] md:max-w-none leading-relaxed text-left md:text-right"
           >
             Frontend developer, coffee enjoyer, future internet enthusiast.
           </p>
         </div>
       </div>
 
-      <!-- Lower Footer Row -->
+      <!-- Separator Line -->
+      <div class="border-t border-soft-navy/35 w-full"></div>
+
+      <!-- BOTTOM ROW -->
       <div
-        class="flex flex-col sm:flex-row justify-between items-center gap-4 pt-6 text-[10px] font-mono text-text-muted"
+        class="flex flex-col sm:flex-row justify-between items-center gap-3 pt-5 text-[9px]"
       >
-        <span> © 2026 — Made with Vue &amp; too much coffee. </span>
-        <div class="flex gap-4">
-          <a href="#" class="hover:text-primary transition-colors">Privacy</a>
-          <a href="#" class="hover:text-primary transition-colors">Terms</a>
+        <!-- Left Side: Coded style text -->
+        <span class="font-mono text-text-muted/45 tracking-wider text-left w-full sm:w-auto">
+          © 2026 — Made with Vue &amp; too much coffee.
+        </span>
+
+        <!-- Right Side: Handwritten scrolling thanks -->
+        <div class="flex items-center gap-1.5 font-handwritten text-[13px] text-text-muted/25 select-none w-full sm:w-auto justify-start sm:justify-end">
+          <span>thanks for scrolling this far</span>
+          <!-- Tiny handwritten arrow doodle beside it -->
+          <svg
+            class="w-3.5 h-3.5 text-primary/20 transform translate-y-[1px]"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M6,6 L18,18 M18,10 L18,18 L10,18"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
         </div>
       </div>
     </div>

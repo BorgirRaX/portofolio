@@ -1,39 +1,46 @@
+<script setup>
+// ContactSection component
+</script>
+
 <template>
   <section
     id="contact"
-    class="py-18 md:py-24 bg-background border-t border-soft-navy/40 relative overflow-hidden"
+    class="pt-12 pb-20 md:pt-16 md:pb-24 bg-transparent relative"
   >
-    <!-- SVG Analog Noise / Grain Overlay -->
-    <svg
-      class="absolute inset-0 w-full h-full opacity-[0.012] pointer-events-none z-0"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <filter id="grainyNoiseContact">
-        <feTurbulence
-          type="fractalNoise"
-          baseFrequency="0.75"
-          numOctaves="3"
-          stitchTiles="stitch"
-        />
-      </filter>
-      <rect width="100%" height="100%" filter="url(#grainyNoiseContact)" />
-    </svg>
-
-    <!-- Dotted Grid Background identical to SkillsSection -->
+    <!-- Subtle dotted texture transitioning from Projects -->
     <div
-      class="absolute inset-0 z-0 opacity-20 dark:opacity-15 pointer-events-none"
+      class="absolute -top-[150px] bottom-0 left-0 right-0 pointer-events-none z-0 opacity-40 dark:opacity-20 text-primary/60"
       style="
-        mask-image: radial-gradient(circle at center, black 30%, transparent 80%);
-        -webkit-mask-image: radial-gradient(circle at center, black 30%, transparent 80%);
+        background-image: radial-gradient(currentColor 1.5px, transparent 1.5px);
+        background-size: 32px 32px;
+        mask-image: linear-gradient(to bottom, transparent 0%, black 15%, transparent 60%);
+        -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 15%, transparent 60%);
       "
-    >
-      <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" class="text-primary">
-        <pattern id="grid-contact-dots" width="30" height="30" patternUnits="userSpaceOnUse">
-          <circle cx="2" cy="2" r="1.5" fill="currentColor" />
-        </pattern>
-        <rect width="100%" height="100%" fill="url(#grid-contact-dots)" />
+    ></div>
+
+    <!-- Right-side ambient dotted grid behind CTA buttons -->
+    <div
+      class="absolute inset-0 pointer-events-none z-0 opacity-50 dark:opacity-20 text-primary/70"
+      style="
+        background-image: radial-gradient(currentColor 1.5px, transparent 1.5px);
+        background-size: 28px 28px;
+        mask-image: radial-gradient(ellipse at 75% 55%, black 0%, rgba(0,0,0,0.6) 40%, transparent 70%);
+        -webkit-mask-image: radial-gradient(ellipse at 75% 55%, black 0%, rgba(0,0,0,0.6) 40%, transparent 70%);
+      "
+    ></div>
+
+    <!-- Doodle connector crossing the boundary -->
+    <div class="absolute -top-10 left-1/2 -translate-x-1/2 flex flex-col items-center pointer-events-none select-none z-20">
+      <svg class="w-3 h-14 text-primary/40 dark:text-primary/30" viewBox="0 0 20 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10,0 Q18,20 5,40 T10,80" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="3 4" />
       </svg>
+      <span class="font-handwritten text-[11px] text-text-muted/60 -mt-2">the end is near</span>
     </div>
+
+    <!-- Ambient transition glow from Projects to Contact -->
+    <div
+      class="absolute -top-[160px] left-1/3 w-[600px] h-[300px] rounded-full bg-primary/4 dark:bg-primary/2 blur-[130px] pointer-events-none z-0"
+    ></div>
 
     <!-- Ambient glow background overlay -->
     <div
@@ -48,7 +55,7 @@
           <span
             class="font-mono text-xs font-semibold tracking-widest text-primary uppercase mb-4 block"
           >
-            // LET'S TALK
+            // LET&apos;S TALK
           </span>
 
           <!-- Headline with Hand-drawn Underlines -->
@@ -57,7 +64,7 @@
           >
             Got an idea, brand, or weird project in mind?<br />
             <span class="relative inline-block text-primary mt-1">
-              Let's talk.
+              Let&apos;s talk.
               <span
                 class="absolute left-0 -bottom-2 w-full h-[4px] bg-primary/45 rounded-full"
               ></span>
@@ -71,7 +78,7 @@
           <p
             class="font-sans text-sm sm:text-base text-text-muted leading-loose font-light max-w-[58ch] mb-8"
           >
-            I'm open to freelance project, landing page, frontend collaboration, or just chat about
+            I&apos;m open to freelance project, landing page, frontend collaboration, or just chat about
             internet and coffee.
           </p>
 
@@ -81,7 +88,7 @@
               usually replies after coffee ☕
             </span>
             <svg
-              class="w-8 h-8 text-primary/30 transform rotate-[25deg] pointer-events-none select-none"
+              class="w-8 h-8 text-primary/30 transform rotate-25 pointer-events-none select-none"
               viewBox="0 0 100 100"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -127,7 +134,7 @@
             class="absolute -left-10 -bottom-14 hidden lg:flex items-center gap-1 z-20 select-none -rotate-6 transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-rotate-2 hover:scale-105"
           >
             <div
-              class="w-24 h-24 bg-[#fdf5cb] text-neutral-800 p-3 shadow-[0_12px_28px_rgba(0,0,0,0.08),_0_2px_4px_rgba(0,0,0,0.04)] select-none z-20 flex flex-col justify-between border border-neutral-300/30 relative"
+              class="w-24 h-24 bg-[#fdf5cb] text-neutral-800 p-3 shadow-[0_12px_28px_rgba(0,0,0,0.08),0_2px_4px_rgba(0,0,0,0.04)] select-none z-20 flex flex-col justify-between border border-neutral-300/30 relative"
             >
               <!-- Torn Aged Scotch Tape doodle physically holding the note -->
               <div
@@ -226,7 +233,7 @@
                   >
                   <!-- Tooltip Caret -->
                   <div
-                    class="absolute top-full left-1/2 -translate-x-1/2 -mt-1 border-[4px] border-transparent border-t-soft-navy"
+                    class="absolute top-full left-1/2 -translate-x-1/2 -mt-1 border-4 border-transparent border-t-soft-navy"
                   ></div>
                 </div>
                 <!-- Button -->
@@ -258,7 +265,7 @@
                   >
                   <!-- Tooltip Caret -->
                   <div
-                    class="absolute top-full left-1/2 -translate-x-1/2 -mt-1 border-[4px] border-transparent border-t-soft-navy"
+                    class="absolute top-full left-1/2 -translate-x-1/2 -mt-1 border-4 border-transparent border-t-soft-navy"
                   ></div>
                 </div>
                 <!-- Button -->
@@ -288,7 +295,7 @@
                   >
                   <!-- Tooltip Caret -->
                   <div
-                    class="absolute top-full left-1/2 -translate-x-1/2 -mt-1 border-[4px] border-transparent border-t-soft-navy"
+                    class="absolute top-full left-1/2 -translate-x-1/2 -mt-1 border-4 border-transparent border-t-soft-navy"
                   ></div>
                 </div>
                 <!-- Button -->

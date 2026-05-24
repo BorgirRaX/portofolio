@@ -71,8 +71,41 @@ onUnmounted(() => {
 
 <template>
   <div
-    class="relative bg-background text-accent-white min-h-screen font-sans selection:bg-primary/20 selection:text-accent-white"
+    class="relative bg-background text-accent-white min-h-screen font-sans selection:bg-primary/20 selection:text-accent-white overflow-x-hidden"
   >
+    <!-- Global Shared Canvas Layer -->
+    <div class="fixed inset-0 z-0 pointer-events-none select-none overflow-hidden bg-background">
+      <!-- Global Grid Background -->
+      <div class="absolute inset-0 opacity-[0.05] dark:opacity-[0.022] text-primary">
+        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern id="global-grid-lines" width="55" height="55" patternUnits="userSpaceOnUse">
+              <path d="M 55 0 L 0 0 0 55" fill="none" stroke="currentColor" stroke-width="0.75" />
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#global-grid-lines)" />
+        </svg>
+      </div>
+
+      <!-- Global Grain Overlay -->
+      <svg
+        class="absolute inset-0 w-full h-full opacity-[0.015] dark:opacity-[0.007] pointer-events-none z-0"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <defs>
+          <filter id="globalGrainyNoise">
+            <feTurbulence
+              type="fractalNoise"
+              baseFrequency="0.75"
+              numOctaves="3"
+              stitchTiles="stitch"
+            />
+          </filter>
+        </defs>
+        <rect width="100%" height="100%" filter="url(#globalGrainyNoise)" />
+      </svg>
+    </div>
+
     <!-- Cinematic Subtle Mouse Cursor (Desktop Only) -->
     <div
       v-if="isDesktop"

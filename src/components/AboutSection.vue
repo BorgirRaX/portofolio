@@ -1,50 +1,68 @@
 <template>
   <section
     id="about"
-    class="pt-12 pb-32 bg-background border-t border-soft-navy/40 relative overflow-hidden"
+    class="pt-12 pb-24 md:pb-32 bg-transparent relative"
   >
+    <!-- Soft atmospheric transition gradient belt from Hero to About -->
     <div
-      class="absolute inset-0 z-0 opacity-[0.014] dark:opacity-[0.05] pointer-events-none"
-      style="
-        mask-image: radial-gradient(circle at center, black 30%, transparent 80%);
-        -webkit-mask-image: radial-gradient(circle at center, black 30%, transparent 80%);
-      "
-    >
-      <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-        <pattern id="grid-about" width="40" height="40" patternUnits="userSpaceOnUse">
-          <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#4a9ecc" stroke-width="0.35" />
-        </pattern>
-        <rect width="100%" height="100%" fill="url(#grid-about)" />
-      </svg>
-    </div>
-
-    <!-- Cloudy blobs, not fog -->
-    <div
-      class="absolute left-[-90px] top-24 w-[220px] h-[160px] rounded-full bg-primary/30 blur-[35px] pointer-events-none z-0"
-    ></div>
-    <div
-      class="absolute left-[-30px] top-40 w-[140px] h-[100px] rounded-full bg-primary/12 blur-[28px] pointer-events-none z-0"
-    ></div>
-    <div
-      class="absolute right-[-80px] top-36 w-[240px] h-[170px] rounded-full bg-primary/20 blur-[38px] pointer-events-none z-0"
-    ></div>
-    <div
-      class="absolute right-[30px] top-56 w-[120px] h-[90px] rounded-full bg-primary/10 blur-[26px] pointer-events-none z-0"
+      class="absolute -top-16 left-0 right-0 h-48 bg-gradient-to-b from-transparent via-primary/3 to-transparent dark:via-primary/1.5 pointer-events-none z-0"
     ></div>
 
+    <!-- Ambient transition glow belt between Hero and About -->
+    <div
+      class="absolute -top-[120px] left-1/2 -translate-x-1/2 w-[600px] h-[240px] rounded-full bg-primary/4 dark:bg-primary/2 blur-[100px] pointer-events-none z-0"
+    ></div>
+
+    <!-- Hand-drawn vertical doodle connector line (Part 2 of thread) -->
     <svg
-      class="absolute inset-0 w-full h-full opacity-[0.22] dark:opacity-[0.07] pointer-events-none z-10"
+      class="absolute top-0 left-[28%] w-8 h-24 text-primary/25 pointer-events-none select-none hidden md:block z-20"
+      viewBox="0 0 100 240"
+      fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <filter id="grainyNoiseAbout">
-        <feTurbulence
-          type="fractalNoise"
-          baseFrequency="0.75"
-          numOctaves="3"
-          stitchTiles="stitch"
-        />
-      </filter>
-      <rect width="100%" height="100%" filter="url(#grainyNoiseAbout)" />
+      <path
+        d="M 50,0 Q 40,100 65,240"
+        stroke="currentColor"
+        stroke-width="1.8"
+        stroke-linecap="round"
+        stroke-dasharray="5 5"
+      />
+    </svg>
+
+    <!-- Subtle wavy connector line (Part 2 of wave) -->
+    <svg
+      class="absolute top-0 right-[24%] w-6 h-20 text-primary/20 pointer-events-none select-none hidden md:block z-20"
+      viewBox="0 0 100 200"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M 50,0 C 40,60 80,130 60,200"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"
+      />
+    </svg>
+
+    <!-- Corner blob shapes -->
+    <svg
+      class="absolute inset-0 w-full h-full pointer-events-none z-0 opacity-80 dark:opacity-20"
+      viewBox="0 0 960 540"
+      xmlns="http://www.w3.org/2000/svg"
+      preserveAspectRatio="none"
+    >
+      <g transform="translate(960, 540)">
+        <path d="M-216 0C-201.2 -23.7 -186.4 -47.4 -177.4 -73.5C-168.4 -99.6 -165.3 -128.1 -150.6 -150.6C-135.9 -173.1 -109.7 -189.7 -82.7 -199.6C-55.6 -209.5 -27.8 -212.7 0 -216L0 0Z" fill="#e4eef7" />
+        <path d="M-162 0C-150.9 -17.8 -139.8 -35.5 -133 -55.1C-126.3 -74.7 -124 -96.1 -113 -113C-101.9 -129.9 -82.3 -142.2 -62 -149.7C-41.7 -157.1 -20.9 -159.5 0 -162L0 0Z" fill="#accde6" />
+        <path d="M-108 0C-100.6 -11.8 -93.2 -23.7 -88.7 -36.7C-84.2 -49.8 -82.6 -64 -75.3 -75.3C-68 -86.6 -54.8 -94.8 -41.3 -99.8C-27.8 -104.7 -13.9 -106.4 0 -108L0 0Z" fill="#70aed5" />
+        <path d="M-54 0C-50.3 -5.9 -46.6 -11.8 -44.3 -18.4C-42.1 -24.9 -41.3 -32 -37.7 -37.7C-34 -43.3 -27.4 -47.4 -20.7 -49.9C-13.9 -52.4 -7 -53.2 0 -54L0 0Z" fill="#4a9ecc" />
+      </g>
+      <g transform="translate(0, 0)">
+        <path d="M216 0C197.6 22.5 179.2 44.9 170 70.4C160.7 95.9 160.6 124.5 147.8 147.8C135 171.1 109.4 189.1 82.7 199.6C55.9 210 28 213 0 216L0 0Z" fill="#e4eef7" />
+        <path d="M162 0C148.2 16.8 134.4 33.7 127.5 52.8C120.6 71.9 120.5 93.4 110.8 110.8C101.2 128.3 82.1 141.8 62 149.7C41.9 157.5 21 159.8 0 162L0 0Z" fill="#accde6" />
+        <path d="M108 0C98.8 11.2 89.6 22.5 85 35.2C80.4 48 80.3 62.2 73.9 73.9C67.5 85.5 54.7 94.5 41.3 99.8C28 105 14 106.5 0 108L0 0Z" fill="#70aed5" />
+        <path d="M54 0C49.4 5.6 44.8 11.2 42.5 17.6C40.2 24 40.2 31.1 36.9 36.9C33.7 42.8 27.4 47.3 20.7 49.9C14 52.5 7 53.3 0 54L0 0Z" fill="#4a9ecc" />
+      </g>
     </svg>
 
     <div class="max-w-5xl mx-auto px-6 relative z-20">
@@ -310,6 +328,21 @@
           </div>
         </div>
       </div>
+    </div>
+
+    <!-- Subtle visual bridge element at bottom boundary transitioning to Skills -->
+    <div
+      class="absolute bottom-2 left-[15%] text-primary/30 pointer-events-none select-none animate-pulse-slow hidden md:block"
+    >
+      <svg class="w-4 h-4" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M 50,30 Q 50,50 70,50 Q 50,50 50,70 Q 50,50 30,50 Q 50,50 50,30 Z"
+          stroke="currentColor"
+          stroke-width="2.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
     </div>
   </section>
 </template>

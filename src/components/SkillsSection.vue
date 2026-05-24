@@ -96,26 +96,27 @@ onMounted(() => {
   <section
     id="skills"
     ref="skillsSection"
-    class="pt-16 pb-24 md:pt-24 md:pb-36 bg-background border-t border-soft-navy/40 relative overflow-hidden"
+    class="pt-10 pb-20 md:pt-12 md:pb-28 bg-transparent relative"
   >
+    <!-- Atmospheric Dotted Grid Background -->
     <div
-      class="absolute inset-0 z-0 pointer-events-none"
+      class="absolute -top-[250px] -bottom-[80px] left-0 right-0 pointer-events-none z-0 opacity-50 dark:opacity-20 text-primary/70"
       style="
-        mask-image: radial-gradient(circle at center, black 30%, transparent 80%);
-        -webkit-mask-image: radial-gradient(circle at center, black 30%, transparent 80%);
+        background-image: radial-gradient(currentColor 1.5px, transparent 1.5px);
+        background-size: 28px 28px;
+        mask-image: radial-gradient(ellipse at 50% 45%, black 0%, rgba(0,0,0,0.85) 40%, transparent 70%);
+        -webkit-mask-image: radial-gradient(ellipse at 50% 45%, black 0%, rgba(0,0,0,0.85) 40%, transparent 70%);
       "
-    >
-      <svg
-        width="100%"
-        height="100%"
-        xmlns="http://www.w3.org/2000/svg"
-        class="text-primary/25 dark:text-primary/10"
-      >
-        <pattern id="grid-skills" width="30" height="30" patternUnits="userSpaceOnUse">
-          <circle cx="2" cy="2" r="1.5" fill="currentColor" />
-        </pattern>
-        <rect width="100%" height="100%" fill="url(#grid-skills)" />
-      </svg>
+    ></div>
+
+    <!-- Ambient transition glow from About to Skills -->
+    <div
+      class="absolute -top-[150px] left-1/2 -translate-x-1/2 w-[550px] h-[300px] rounded-full bg-primary/4 dark:bg-primary/2 blur-[120px] pointer-events-none z-0"
+    ></div>
+
+    <!-- Subtle visual bridge element at top boundary -->
+    <div class="absolute top-2 right-[22%] text-primary/35 pointer-events-none select-none rotate-[15deg] hidden md:block">
+      <span class="font-handwritten text-xs text-text-muted/70 tracking-wider">drift... ✨</span>
     </div>
     <div
       class="absolute left-[-120px] top-1/2 -translate-y-1/2 w-[280px] h-[280px] rounded-full bg-primary/20 blur-[50px] pointer-events-none z-0"
@@ -505,11 +506,9 @@ onMounted(() => {
       </div>
     </div>
     <div
-      class="absolute bottom-0 inset-x-0 h-[100px] md:h-[135px] overflow-hidden pointer-events-none select-none z-10"
+      class="absolute bottom-0 md:-bottom-[40px] inset-x-0 h-[200px] md:h-[280px] pointer-events-none select-none z-10"
+      style="mask-image: linear-gradient(to bottom, black 0%, black 75%, transparent 100%); -webkit-mask-image: linear-gradient(to bottom, black 0%, black 75%, transparent 100%);"
     >
-      <div
-        class="absolute inset-x-[-8%] bottom-[-55px] h-[130px] bg-[radial-gradient(ellipse_at_center,rgba(74,158,204,0.18)_0%,transparent_70%)] blur-[34px] opacity-80"
-      ></div>
       <svg
         class="absolute inset-0 w-full h-full"
         viewBox="0 0 1440 320"
@@ -518,31 +517,68 @@ onMounted(() => {
         xmlns="http://www.w3.org/2000/svg"
       >
         <defs>
-          <linearGradient id="waveFade" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="var(--color-primary)" stop-opacity="0.2" />
-            <stop offset="55%" stop-color="var(--color-primary)" stop-opacity="0.3" />
-            <stop offset="100%" style="stop-color: var(--color-background); stop-opacity: 0.15" />
+          <linearGradient id="waveGradient" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="var(--color-primary)" stop-opacity="0.6" />
+            <stop offset="20%" stop-color="var(--color-primary)" stop-opacity="0.25" />
+            <stop offset="100%" stop-color="var(--color-primary)" stop-opacity="0" />
           </linearGradient>
 
-          <filter id="blurWave">
+          <radialGradient id="troughLight" cx="50%" cy="85%" r="45%">
+            <stop offset="0%" stop-color="white" stop-opacity="0.6" />
+            <stop offset="50%" stop-color="white" stop-opacity="0.15" />
+            <stop offset="100%" stop-color="white" stop-opacity="0" />
+          </radialGradient>
+
+          <filter id="waveTexture" x="0%" y="0%" width="100%" height="100%">
+            <feTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="4" result="noise" />
+            <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.35 0" in="noise" result="coloredNoise" />
+            <feComposite operator="in" in="coloredNoise" in2="SourceGraphic" result="composite" />
+            <feBlend mode="multiply" in="composite" in2="SourceGraphic" />
+          </filter>
+
+          <filter id="edgeBlur">
             <feGaussianBlur stdDeviation="8" />
           </filter>
+          <filter id="softHighlight">
+            <feGaussianBlur stdDeviation="1.5" />
+          </filter>
         </defs>
+
+        <!-- Base gradient wave and center light grouped under noise texture -->
+        <g filter="url(#waveTexture)">
+          <path
+            d="M 0,140 C 250,140 450,280 720,280 C 990,280 1190,160 1440,160 L 1440,320 L 0,320 Z"
+            fill="url(#waveGradient)"
+          />
+          <path
+            d="M 0,140 C 250,140 450,280 720,280 C 990,280 1190,160 1440,160 L 1440,320 L 0,320 Z"
+            fill="url(#troughLight)"
+            class="opacity-100 dark:opacity-10"
+          />
+        </g>
+
+        <!-- Deep inner shadow below edge for 3D depth -->
         <path
-          d="M0,224L34.3,213.3C68.6,203,137,181,206,181.3C274.3,181,343,203,411,218.7C480,235,549,245,617,261.3C685.7,277,754,299,823,293.3C891.4,288,960,256,1029,218.7C1097.1,181,1166,139,1234,128C1302.9,117,1371,139,1406,149.3L1440,160L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z"
-          fill="url(#waveFade)"
-          filter="url(#blurWave)"
-          opacity="0.6"
-        />
-        <path
-          d="M0,224L34.3,213.3C68.6,203,137,181,206,181.3C274.3,181,343,203,411,218.7C480,235,549,245,617,261.3C685.7,277,754,299,823,293.3C891.4,288,960,256,1029,218.7C1097.1,181,1166,139,1234,128C1302.9,117,1371,139,1406,149.3L1440,160"
+          d="M 0,140 C 250,140 450,280 720,280 C 990,280 1190,160 1440,160"
+          fill="none"
           stroke="var(--color-primary)"
+          stroke-width="20"
+          opacity="0.4"
+          filter="url(#edgeBlur)"
+          transform="translate(0, 12)"
+        />
+
+        <!-- Soft top highlight for a beveled 3D rim -->
+        <path
+          d="M 0,139 C 250,139 450,279 720,279 C 990,279 1190,159 1440,159"
+          fill="none"
+          stroke="white"
           stroke-width="3"
-          stroke-linecap="round"
-          filter="url(#blurWave)"
-          opacity="0.35"
+          opacity="0.4"
+          filter="url(#softHighlight)"
         />
       </svg>
+    </div>
       <svg
         class="w-12 h-12 md:w-16 md:h-16 text-primary/45 dark:text-primary/25 absolute left-[8%] bottom-5 hidden sm:block select-none pointer-events-none z-20"
         viewBox="0 0 100 100"
@@ -590,7 +626,6 @@ onMounted(() => {
           <polyline points="19 12 12 19 5 12"></polyline>
         </svg>
       </div>
-    </div>
   </section>
 </template>
 

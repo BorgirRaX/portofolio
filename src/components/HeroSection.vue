@@ -1,66 +1,82 @@
 <template>
   <section
-    class="relative min-h-screen flex items-center justify-center overflow-hidden bg-background"
+    class="relative min-h-screen flex items-center justify-center bg-transparent"
   >
-    <svg
-      class="absolute inset-0 w-full h-full opacity-[0.08] dark:opacity-[0.025] pointer-events-none z-0"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <filter id="grainyNoise">
-        <feTurbulence
-          type="fractalNoise"
-          baseFrequency="0.75"
-          numOctaves="3"
-          stitchTiles="stitch"
-        />
-      </filter>
-      <rect width="100%" height="100%" filter="url(#grainyNoise)" />
-    </svg>
-
+    <!-- 1. Cinematic Film Grain (Base) -->
     <div
-      class="absolute inset-0 z-0 opacity-[0.22] dark:opacity-[0.10] pointer-events-none"
+      class="absolute top-0 left-0 right-0 -bottom-[200px] pointer-events-none z-20 opacity-[0.08] dark:opacity-[0.12] mix-blend-overlay"
       style="
-        mask-image: radial-gradient(circle at center, black 40%, transparent 85%);
-        -webkit-mask-image: radial-gradient(circle at center, black 40%, transparent 85%);
+        background-image: url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.8%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E');
+        mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+        -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
       "
-    >
-      <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <pattern id="grid-subtle" width="80" height="80" patternUnits="userSpaceOnUse">
-            <path d="M 80 0 L 0 0 0 80" fill="none" stroke="#4a9ecc" stroke-width="1.0" />
-          </pattern>
-        </defs>
-        <rect width="100%" height="100%" fill="url(#grid-subtle)" />
+    ></div>
+
+    <!-- 2. Subtle Dotted Grid (Clean center, visible edges/bottom) -->
+    <div
+      class="absolute top-0 left-0 right-0 -bottom-[200px] pointer-events-none z-0 opacity-50 dark:opacity-20 text-primary/70"
+      style="
+        background-image: radial-gradient(currentColor 1.5px, transparent 1.5px);
+        background-size: 28px 28px;
+        mask-image: radial-gradient(ellipse at 50% 40%, transparent 45%, black 85%, transparent 100%);
+        -webkit-mask-image: radial-gradient(ellipse at 50% 40%, transparent 45%, black 85%, transparent 100%);
+      "
+    ></div>
+
+    <!-- 3. Floating Micro-Doodles (Accents) -->
+    <svg class="absolute top-[25%] left-[8%] md:left-[15%] w-3.5 h-3.5 text-primary/30 dark:text-primary/20 animate-pulse-slow pointer-events-none z-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 4v16M4 12h16"/></svg>
+    <svg class="absolute top-[35%] right-[10%] md:right-[15%] w-3 h-3 text-primary/25 dark:text-primary/15 animate-bounce pointer-events-none z-0" style="animation-duration: 4s;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/></svg>
+    <svg class="absolute bottom-[10%] left-[15%] md:left-[22%] w-6 h-6 text-primary/25 dark:text-primary/15 pointer-events-none z-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M4 12h.01M12 12h.01M20 12h.01"/></svg>
+
+    <!-- Gradient Mesh (Enhanced - more vibrant + warm accent) -->
+    <div
+      class="absolute -top-[10%] -left-[10%] w-[600px] h-[600px] md:w-[900px] md:h-[900px] rounded-full bg-cyan-400/25 dark:bg-cyan-500/8 blur-[140px] md:blur-[180px] pointer-events-none z-0"
+    ></div>
+    <div
+      class="absolute -bottom-[5%] -right-[5%] w-[500px] h-[500px] md:w-[800px] md:h-[800px] rounded-full bg-blue-300/20 dark:bg-blue-500/8 blur-[130px] md:blur-[170px] pointer-events-none z-0"
+    ></div>
+    <div
+      class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] md:w-[900px] md:h-[900px] rounded-full bg-primary/18 dark:bg-primary/8 blur-[150px] md:blur-[200px] pointer-events-none z-0"
+    ></div>
+    <!-- Warm accent blob (amber/orange) -->
+    <div
+      class="absolute top-[15%] right-[20%] w-[300px] h-[300px] md:w-[500px] md:h-[500px] rounded-full bg-amber-300/10 dark:bg-amber-500/5 blur-[120px] md:blur-[160px] pointer-events-none z-0"
+    ></div>
+    <!-- Cool accent blob (indigo) -->
+    <div
+      class="absolute bottom-[20%] left-[25%] w-[250px] h-[250px] md:w-[400px] md:h-[400px] rounded-full bg-indigo-300/8 dark:bg-indigo-500/4 blur-[110px] md:blur-[150px] pointer-events-none z-0"
+    ></div>
+
+    <!-- Concentric Rings (focal depth behind headline) -->
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none z-0">
+      <svg class="w-[500px] h-[500px] md:w-[700px] md:h-[700px] opacity-[0.06] dark:opacity-[0.08]" viewBox="0 0 700 700" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="350" cy="350" r="80" stroke="var(--color-primary)" stroke-width="1"/>
+        <circle cx="350" cy="350" r="140" stroke="var(--color-primary)" stroke-width="0.8"/>
+        <circle cx="350" cy="350" r="210" stroke="var(--color-primary)" stroke-width="0.6"/>
+        <circle cx="350" cy="350" r="290" stroke="var(--color-primary)" stroke-width="0.4"/>
+        <circle cx="350" cy="350" r="340" stroke="var(--color-primary)" stroke-width="0.3"/>
       </svg>
     </div>
 
+    <!-- Vignette edge fade -->
     <div
-      class="absolute top-0 left-0 w-[500px] h-[500px] md:w-[800px] md:h-[800px] rounded-full bg-cyan-400/18 dark:bg-cyan-500/5 blur-[130px] md:blur-[170px] pointer-events-none z-0"
-    ></div>
-    <div
-      class="absolute bottom-0 right-0 w-[400px] h-[400px] md:w-[700px] md:h-[700px] rounded-full bg-blue-300/14 dark:bg-blue-500/5 blur-[120px] md:blur-[160px] pointer-events-none z-0"
-    ></div>
-    <div
-      class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] md:w-[800px] md:h-[800px] rounded-full bg-primary/14 dark:bg-primary/5 blur-[140px] md:blur-[190px] pointer-events-none z-0"
-    ></div>
-    <div
-      class="absolute inset-0 pointer-events-none z-0 opacity-35 dark:opacity-70"
+      class="absolute top-0 left-0 right-0 -bottom-[300px] pointer-events-none z-0 opacity-35 dark:opacity-70"
       style="background: radial-gradient(circle, transparent 55%, var(--color-background) 100%)"
     ></div>
 
     <div class="max-w-4xl mx-auto px-6 relative z-10 text-center flex flex-col items-center">
       <div
-        class="relative inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-soft-navy bg-card/40 backdrop-blur-sm mb-6 shadow-sm animate-pulse-slow"
+        class="relative inline-flex items-center gap-2 px-4 py-1.5 mb-6 animate-pulse-slow"
       >
         <svg
-          class="absolute -inset-2 w-[calc(100%+16px)] h-[calc(100%+16px)] pointer-events-none z-0 stroke-primary/30"
+          class="absolute -inset-2 w-[calc(100%+16px)] h-[calc(100%+16px)] pointer-events-none z-0 stroke-primary/40"
           viewBox="0 0 200 40"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
             d="M6,18 C30,3 170,2 194,18 C206,26 165,36 90,35 C40,34 2,27 10,14"
-            stroke-width="1"
+            stroke-width="1.2"
             stroke-linecap="round"
             stroke-linejoin="round"
           />
@@ -211,6 +227,37 @@
         <path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
       </svg>
     </a>
+
+    <!-- Hand-drawn vertical doodle connector line (Part 1 of thread) -->
+    <svg
+      class="absolute bottom-0 left-[28%] w-8 h-20 text-primary/25 pointer-events-none select-none hidden md:block z-20"
+      viewBox="0 0 100 200"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M 30,0 Q 60,100 50,200"
+        stroke="currentColor"
+        stroke-width="1.8"
+        stroke-linecap="round"
+        stroke-dasharray="5 5"
+      />
+    </svg>
+
+    <!-- Subtle wavy connector line (Part 1 of wave) -->
+    <svg
+      class="absolute bottom-0 right-[24%] w-6 h-14 text-primary/20 pointer-events-none select-none hidden md:block z-20"
+      viewBox="0 0 100 200"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M 70,0 C 40,80 60,140 50,200"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"
+      />
+    </svg>
   </section>
 </template>
 
