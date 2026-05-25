@@ -98,7 +98,6 @@ onMounted(() => {
     ref="skillsSection"
     class="pt-10 pb-20 md:pt-12 md:pb-28 bg-transparent relative"
   >
-    <!-- Atmospheric Dotted Grid Background -->
     <div
       class="absolute -top-[250px] -bottom-[80px] left-0 right-0 pointer-events-none z-0 opacity-50 dark:opacity-20 text-primary/70"
       style="
@@ -108,39 +107,13 @@ onMounted(() => {
         -webkit-mask-image: radial-gradient(ellipse at 50% 45%, black 0%, rgba(0,0,0,0.85) 40%, transparent 70%);
       "
     ></div>
-
-    <!-- Ambient transition glow from About to Skills -->
     <div
       class="absolute -top-[150px] left-1/2 -translate-x-1/2 w-[550px] h-[300px] rounded-full bg-primary/4 dark:bg-primary/2 blur-[120px] pointer-events-none z-0"
     ></div>
-
-    <!-- Subtle visual bridge element at top boundary -->
-    <div class="absolute top-2 right-[22%] text-primary/35 pointer-events-none select-none rotate-[15deg] hidden md:block">
+    <div class="absolute top-2 right-[22%] text-primary/35 pointer-events-none select-none rotate-15 hidden md:block">
       <span class="font-handwritten text-xs text-text-muted/70 tracking-wider">drift... ✨</span>
     </div>
-    <div
-      class="absolute left-[-120px] top-1/2 -translate-y-1/2 w-[280px] h-[280px] rounded-full bg-primary/20 blur-[50px] pointer-events-none z-0"
-    ></div>
-    <div
-      class="absolute right-[-120px] top-1/3 w-[260px] h-[260px] rounded-full bg-primary/15 blur-[45px] pointer-events-none z-0"
-    ></div>
-    <svg
-      class="absolute inset-0 w-full h-full opacity-[0.55] dark:opacity-[0.22] mix-blend-overlay pointer-events-none z-30"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <filter id="grainyNoiseSkills">
-        <feTurbulence
-          type="fractalNoise"
-          baseFrequency="0.55"
-          numOctaves="3"
-          stitchTiles="stitch"
-        />
-      </filter>
-      <rect width="100%" height="100%" filter="url(#grainyNoiseSkills)" />
-    </svg>
-
     <div class="max-w-4xl mx-auto px-6 relative z-20">
-      <!-- Section Title -->
       <div class="text-left mb-12 relative">
         <svg
           class="absolute -right-2 -top-6 w-9 h-9 text-primary/30 hidden md:block select-none pointer-events-none animate-pulse-slow"
@@ -178,7 +151,6 @@ onMounted(() => {
         </h2>
       </div>
 
-      <!-- Main Columns (2 Columns Layout) -->
       <div
         class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14 items-start relative pb-12 lg:pb-16"
       >
@@ -444,8 +416,6 @@ onMounted(() => {
                 </span>
 
                 <span>{{ skill.name }}</span>
-
-                <!-- High-fidelity custom tooltip -->
                 <div
                   class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2.5 px-3 py-2 bg-dark-navy border border-soft-navy text-accent-white rounded-xl shadow-2xl opacity-0 scale-95 translate-y-1 pointer-events-none group-hover:opacity-100 group-hover:scale-100 group-hover:translate-y-0 transition-all duration-300 z-50 whitespace-nowrap flex flex-col items-center"
                 >
@@ -543,8 +513,6 @@ onMounted(() => {
             <feGaussianBlur stdDeviation="1.5" />
           </filter>
         </defs>
-
-        <!-- Base gradient wave and center light grouped under noise texture -->
         <g filter="url(#waveTexture)">
           <path
             d="M 0,140 C 250,140 450,280 720,280 C 990,280 1190,160 1440,160 L 1440,320 L 0,320 Z"
@@ -556,8 +524,6 @@ onMounted(() => {
             class="opacity-100 dark:opacity-10"
           />
         </g>
-
-        <!-- Deep inner shadow below edge for 3D depth -->
         <path
           d="M 0,140 C 250,140 450,280 720,280 C 990,280 1190,160 1440,160"
           fill="none"
@@ -567,8 +533,6 @@ onMounted(() => {
           filter="url(#edgeBlur)"
           transform="translate(0, 12)"
         />
-
-        <!-- Soft top highlight for a beveled 3D rim -->
         <path
           d="M 0,139 C 250,139 450,279 720,279 C 990,279 1190,159 1440,159"
           fill="none"
@@ -630,24 +594,19 @@ onMounted(() => {
 </template>
 
 <style scoped>
-/* High-Fidelity Custom Spaced Dashed Border using Responsive SVGs */
 .custom-dashed {
   background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='12' ry='12' stroke='%234a9ecc' stroke-opacity='0.35' stroke-width='1.5' stroke-dasharray='4%2c 10' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
   background-size: 100% 100%;
   border-radius: 12px;
 }
 
-/* Light Mode Custom Spaced Dashed Border Color Override */
 html.light .custom-dashed {
   background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='12' ry='12' stroke='%23b9d3e8' stroke-opacity='0.85' stroke-width='1.5' stroke-dasharray='4%2c 10' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
 }
-
-/* Clear custom background border on hover to allow standard Tailwind border-solid transitions */
 .custom-dashed:hover {
   background-image: none !important;
 }
 
-/* Curvy arrow bounce animation */
 @keyframes bounce-slow {
   0%,
   100% {
