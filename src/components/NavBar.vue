@@ -91,7 +91,7 @@ onUnmounted(() => {
           class="p-2 rounded-lg border border-soft-navy hover:border-primary/50 bg-card/20 hover:bg-card/60 transition-all duration-300 cursor-pointer text-text-muted hover:text-accent-white"
           aria-label="Toggle Theme"
         >
-          <!-- Sun Icon (visible in Dark Mode) -->
+
           <svg
             v-if="!isLight"
             xmlns="http://www.w3.org/2000/svg"
@@ -106,7 +106,6 @@ onUnmounted(() => {
               d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"
             />
           </svg>
-          <!-- Moon Icon (visible in Light Mode) -->
           <svg
             v-else
             xmlns="http://www.w3.org/2000/svg"
@@ -120,7 +119,6 @@ onUnmounted(() => {
           </svg>
         </button>
 
-        <!-- Mobile Menu Toggle Button -->
         <button
           @click="mobileMenuOpen = !mobileMenuOpen"
           class="md:hidden p-2 rounded-lg border border-soft-navy text-text-muted hover:text-accent-white bg-card/20 transition-colors"
@@ -155,7 +153,6 @@ onUnmounted(() => {
       </div>
     </div>
 
-    <!-- Mobile Dropdown Menu -->
     <div
       v-if="mobileMenuOpen"
       class="md:hidden absolute top-full left-0 right-0 bg-background/95 border-b border-soft-navy py-5 px-8 flex flex-col gap-3.5 backdrop-blur-md transition-all duration-300 ease-in-out"

@@ -7,7 +7,6 @@
     id="contact"
     class="pt-12 pb-20 md:pt-16 md:pb-24 bg-transparent relative"
   >
-    <!-- Subtle dotted texture transitioning from Projects -->
     <div
       class="absolute -top-[150px] bottom-0 left-0 right-0 pointer-events-none z-0 opacity-40 dark:opacity-20 text-primary/60"
       style="
@@ -18,7 +17,6 @@
       "
     ></div>
 
-    <!-- Right-side ambient dotted grid behind CTA buttons -->
     <div
       class="absolute inset-0 pointer-events-none z-0 opacity-50 dark:opacity-20 text-primary/70"
       style="
@@ -29,7 +27,6 @@
       "
     ></div>
 
-    <!-- Doodle connector crossing the boundary -->
     <div class="absolute -top-10 left-1/2 -translate-x-1/2 flex flex-col items-center pointer-events-none select-none z-20">
       <svg class="w-3 h-14 text-primary/40 dark:text-primary/30" viewBox="0 0 20 80" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M10,0 Q18,20 5,40 T10,80" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="3 4" />
@@ -37,28 +34,23 @@
       <span class="font-handwritten text-[11px] text-text-muted/60 -mt-2">the end is near</span>
     </div>
 
-    <!-- Ambient transition glow from Projects to Contact -->
     <div
       class="absolute -top-[160px] left-1/3 w-[600px] h-[300px] rounded-full bg-primary/4 dark:bg-primary/2 blur-[130px] pointer-events-none z-0"
     ></div>
 
-    <!-- Ambient glow background overlay -->
     <div
       class="absolute bottom-0 left-1/3 translate-y-1/2 w-[250px] h-[250px] rounded-full bg-primary/3 blur-[90px] pointer-events-none z-0"
     ></div>
 
     <div class="max-w-5xl mx-auto px-6 relative z-10">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-        <!-- LEFT SIDE: Text and Headings (7 cols) -->
         <div class="lg:col-span-7 flex flex-col items-start text-left relative">
-          <!-- Let's Talk Eyebrow -->
           <span
             class="font-mono text-xs font-semibold tracking-widest text-primary uppercase mb-4 block"
           >
             // LET&apos;S TALK
           </span>
 
-          <!-- Headline with Hand-drawn Underlines -->
           <h2
             class="font-display font-bold text-3xl md:text-5xl text-accent-white mb-6 leading-tight tracking-tight"
           >
@@ -74,7 +66,6 @@
             </span>
           </h2>
 
-          <!-- Subtext -->
           <p
             class="font-sans text-sm sm:text-base text-text-muted leading-loose font-light max-w-[58ch] mb-8"
           >
@@ -82,7 +73,6 @@
             internet and coffee.
           </p>
 
-          <!-- Coffee micro copy & Handwritten Arrow -->
           <div class="flex items-center gap-2 select-none text-primary/40 mt-2 ml-1">
             <span class="font-handwritten text-sm text-text-muted/80 tracking-wide">
               usually replies after coffee ☕
@@ -113,7 +103,6 @@
         <div
           class="lg:col-span-5 flex flex-col items-center lg:items-start relative w-full lg:pl-8 py-8"
         >
-          <!-- Floating decorative hand-drawn star identical to skills/about -->
           <svg
             class="absolute -top-6 right-12 w-8 h-8 text-primary/30 animate-pulse-slow select-none pointer-events-none"
             viewBox="0 0 100 100"
@@ -128,15 +117,12 @@
               stroke-linejoin="round"
             />
           </svg>
-
-          <!-- Scrapbook Sticky Note -->
           <div
             class="absolute -left-10 -bottom-14 hidden lg:flex items-center gap-1 z-20 select-none -rotate-6 transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-rotate-2 hover:scale-105"
           >
             <div
               class="w-24 h-24 bg-[#fdf5cb] text-neutral-800 p-3 shadow-[0_12px_28px_rgba(0,0,0,0.08),0_2px_4px_rgba(0,0,0,0.04)] select-none z-20 flex flex-col justify-between border border-neutral-300/30 relative"
             >
-              <!-- Torn Aged Scotch Tape doodle physically holding the note -->
               <div
                 class="absolute -top-3 left-1/2 -translate-x-1/2 w-11 h-5 bg-[#f4ebd0]/50 dark:bg-[#f4ebd0]/30 border-x border-dashed border-neutral-400/25 backdrop-blur-[1.5px] rotate-[-4deg] z-30 pointer-events-none select-none shadow-[0_1px_3px_rgba(0,0,0,0.04)]"
                 style="clip-path: polygon(0% 12%, 8% 0%, 15% 10%, 25% 1%, 35% 12%, 45% 0%, 55% 10%, 65% 2%, 75% 12%, 85% 0%, 92% 8%, 100% 0%, 100% 88%, 92% 100%, 82% 88%, 72% 98%, 62% 88%, 52% 100%, 42% 88%, 32% 98%, 22% 88%, 12% 100%, 5% 88%, 0% 100%);"
@@ -181,7 +167,7 @@
               </svg>
             </a>
 
-            <!-- Secondary Outlined Email CTA (Slightly Offset) -->
+            <!-- Secondary Outlined Email CTA -->
             <a
               href="mailto:jimyhendrie123@gmail.com"
               class="group/btn inline-flex items-center justify-between px-7 py-4 rounded-full border border-soft-navy hover:border-primary/50 bg-card/25 backdrop-blur-sm text-text-muted hover:text-accent-white font-mono text-xs tracking-wider uppercase transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1 translate-x-3 cursor-pointer"
@@ -224,14 +210,12 @@
             <div class="flex items-center gap-3">
               <!-- GITHUB -->
               <div class="relative group/social flex flex-col items-center">
-                <!-- Tooltip -->
                 <div
                   class="absolute bottom-full mb-2 px-3 py-1 bg-card border border-soft-navy rounded-lg shadow-md whitespace-nowrap opacity-0 pointer-events-none group-hover/social:opacity-100 group-hover/social:-translate-y-1 transition-all duration-300 z-30 select-none scale-90 group-hover/social:scale-100"
                 >
                   <span class="font-handwritten text-xs text-text-muted tracking-wide"
                     >late night commits ⚡</span
                   >
-                  <!-- Tooltip Caret -->
                   <div
                     class="absolute top-full left-1/2 -translate-x-1/2 -mt-1 border-4 border-transparent border-t-soft-navy"
                   ></div>
@@ -256,14 +240,12 @@
 
               <!-- INSTAGRAM -->
               <div class="relative group/social flex flex-col items-center">
-                <!-- Tooltip -->
                 <div
                   class="absolute bottom-full mb-2 px-3 py-1 bg-card border border-soft-navy rounded-lg shadow-md whitespace-nowrap opacity-0 pointer-events-none group-hover/social:opacity-100 group-hover/social:-translate-y-1 transition-all duration-300 z-30 select-none scale-90 group-hover/social:scale-100"
                 >
                   <span class="font-handwritten text-xs text-text-muted tracking-wide"
                     >random life snapshots 📸</span
                   >
-                  <!-- Tooltip Caret -->
                   <div
                     class="absolute top-full left-1/2 -translate-x-1/2 -mt-1 border-4 border-transparent border-t-soft-navy"
                   ></div>
@@ -286,14 +268,12 @@
 
               <!-- X / TWITTER -->
               <div class="relative group/social flex flex-col items-center">
-                <!-- Tooltip -->
                 <div
                   class="absolute bottom-full mb-2 px-3 py-1 bg-card border border-soft-navy rounded-lg shadow-md whitespace-nowrap opacity-0 pointer-events-none group-hover/social:opacity-100 group-hover/social:-translate-y-1 transition-all duration-300 z-30 select-none scale-90 group-hover/social:scale-100"
                 >
                   <span class="font-handwritten text-xs text-text-muted tracking-wide"
                     >web3 rabbit hole 🐇</span
                   >
-                  <!-- Tooltip Caret -->
                   <div
                     class="absolute top-full left-1/2 -translate-x-1/2 -mt-1 border-4 border-transparent border-t-soft-navy"
                   ></div>
@@ -319,7 +299,6 @@
       </div>
     </div>
 
-    <!-- Very subtle bottom-right decorative hand-drawn sparkle -->
     <svg
       class="absolute bottom-8 right-12 w-6 h-6 text-primary/35 pointer-events-none select-none animate-pulse-slow hidden md:block"
       viewBox="0 0 100 100"

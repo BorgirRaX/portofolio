@@ -477,8 +477,6 @@ const projects = [
         </div>
       </div>
     </div>
-
-    <!-- Subtle visual bridge element at bottom boundary transitioning to Contact -->
     <div
       class="absolute bottom-2 left-[28%] text-primary/25 pointer-events-none select-none animate-pulse-slow hidden md:block"
     >

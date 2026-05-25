@@ -2,7 +2,6 @@
   <section
     class="relative min-h-screen flex items-center justify-center bg-transparent"
   >
-    <!-- 1. Cinematic Film Grain (Base) -->
     <div
       class="absolute top-0 left-0 right-0 -bottom-[200px] pointer-events-none z-20 opacity-[0.08] dark:opacity-[0.12] mix-blend-overlay"
       style="
@@ -12,7 +11,6 @@
       "
     ></div>
 
-    <!-- 2. Subtle Dotted Grid (Clean center, visible edges/bottom) -->
     <div
       class="absolute top-0 left-0 right-0 -bottom-[200px] pointer-events-none z-0 opacity-50 dark:opacity-20 text-primary/70"
       style="
@@ -23,12 +21,9 @@
       "
     ></div>
 
-    <!-- 3. Floating Micro-Doodles (Accents) -->
     <svg class="absolute top-[25%] left-[8%] md:left-[15%] w-3.5 h-3.5 text-primary/30 dark:text-primary/20 animate-pulse-slow pointer-events-none z-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 4v16M4 12h16"/></svg>
     <svg class="absolute top-[35%] right-[10%] md:right-[15%] w-3 h-3 text-primary/25 dark:text-primary/15 animate-bounce pointer-events-none z-0" style="animation-duration: 4s;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/></svg>
     <svg class="absolute bottom-[10%] left-[15%] md:left-[22%] w-6 h-6 text-primary/25 dark:text-primary/15 pointer-events-none z-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M4 12h.01M12 12h.01M20 12h.01"/></svg>
-
-    <!-- Gradient Mesh (Enhanced - more vibrant + warm accent) -->
     <div
       class="absolute -top-[10%] -left-[10%] w-[600px] h-[600px] md:w-[900px] md:h-[900px] rounded-full bg-cyan-400/25 dark:bg-cyan-500/8 blur-[140px] md:blur-[180px] pointer-events-none z-0"
     ></div>
@@ -38,16 +33,13 @@
     <div
       class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] md:w-[900px] md:h-[900px] rounded-full bg-primary/18 dark:bg-primary/8 blur-[150px] md:blur-[200px] pointer-events-none z-0"
     ></div>
-    <!-- Warm accent blob (amber/orange) -->
     <div
       class="absolute top-[15%] right-[20%] w-[300px] h-[300px] md:w-[500px] md:h-[500px] rounded-full bg-amber-300/10 dark:bg-amber-500/5 blur-[120px] md:blur-[160px] pointer-events-none z-0"
     ></div>
-    <!-- Cool accent blob (indigo) -->
     <div
       class="absolute bottom-[20%] left-[25%] w-[250px] h-[250px] md:w-[400px] md:h-[400px] rounded-full bg-indigo-300/8 dark:bg-indigo-500/4 blur-[110px] md:blur-[150px] pointer-events-none z-0"
     ></div>
 
-    <!-- Concentric Rings (focal depth behind headline) -->
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none z-0">
       <svg class="w-[500px] h-[500px] md:w-[700px] md:h-[700px] opacity-[0.06] dark:opacity-[0.08]" viewBox="0 0 700 700" fill="none" xmlns="http://www.w3.org/2000/svg">
         <circle cx="350" cy="350" r="80" stroke="var(--color-primary)" stroke-width="1"/>
@@ -58,7 +50,6 @@
       </svg>
     </div>
 
-    <!-- Vignette edge fade -->
     <div
       class="absolute top-0 left-0 right-0 -bottom-[300px] pointer-events-none z-0 opacity-35 dark:opacity-70"
       style="background: radial-gradient(circle, transparent 55%, var(--color-background) 100%)"
@@ -228,7 +219,6 @@
       </svg>
     </a>
 
-    <!-- Hand-drawn vertical doodle connector line (Part 1 of thread) -->
     <svg
       class="absolute bottom-0 left-[28%] w-8 h-20 text-primary/25 pointer-events-none select-none hidden md:block z-20"
       viewBox="0 0 100 200"
@@ -244,7 +234,6 @@
       />
     </svg>
 
-    <!-- Subtle wavy connector line (Part 1 of wave) -->
     <svg
       class="absolute bottom-0 right-[24%] w-6 h-14 text-primary/20 pointer-events-none select-none hidden md:block z-20"
       viewBox="0 0 100 200"

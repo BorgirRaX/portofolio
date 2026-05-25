@@ -313,7 +313,6 @@
       </div>
     </div>
 
-    <!-- Subtle visual bridge element at bottom boundary transitioning to Skills -->
     <div
       class="absolute bottom-2 left-[15%] text-primary/30 pointer-events-none select-none animate-pulse-slow hidden md:block"
     >

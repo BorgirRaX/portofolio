@@ -1,14 +1,10 @@
 <script setup>
-// Compact cinematic ending scene footer
 </script>
 
 <template>
   <footer class="bg-transparent pt-6 pb-8 md:pt-8 md:pb-10 relative overflow-hidden z-10">
-    <!-- Cinematic background fade -->
-    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-primary/3 to-primary/10 dark:via-primary/10 dark:to-primary/20 pointer-events-none z-0"></div>
-
-    <!-- Soft fading hairline divider -->
-    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-2/3 max-w-xl h-[1px] bg-gradient-to-r from-transparent via-primary/15 dark:via-primary/25 to-transparent pointer-events-none z-0"></div>
+    <div class="absolute inset-0 bg-linear-to-b from-transparent via-primary/3 to-primary/10 dark:via-primary/10 dark:to-primary/20 pointer-events-none z-0"></div>
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-2/3 max-w-xl h-px bg-linear-to-r from-transparent via-primary/15 dark:via-primary/25 to-transparent pointer-events-none z-0"></div>
 
     <div class="max-w-5xl mx-auto px-6 relative z-10">
       <!-- TOP ROW -->
@@ -20,7 +16,6 @@
           <span class="font-display font-bold text-base text-neutral-900 dark:text-accent-white tracking-tight">
             Built by BorgirRaX.
           </span>
-          <!-- Tiny hand-drawn doodle star (Very subtle) -->
           <svg
             class="w-3.5 h-3.5 text-primary/35 animate-pulse-slow"
             viewBox="0 0 100 100"
@@ -46,8 +41,6 @@
           </p>
         </div>
       </div>
-
-      <!-- Separator Line -->
       <div class="border-t border-soft-navy/35 w-full"></div>
 
       <!-- BOTTOM ROW -->
@@ -62,9 +55,8 @@
         <!-- Right Side: Handwritten scrolling thanks -->
         <div class="flex items-center gap-1.5 font-handwritten text-[13px] text-text-muted/25 select-none w-full sm:w-auto justify-start sm:justify-end">
           <span>thanks for scrolling this far</span>
-          <!-- Tiny handwritten arrow doodle beside it -->
           <svg
-            class="w-3.5 h-3.5 text-primary/20 transform translate-y-[1px]"
+            class="w-3.5 h-3.5 text-primary/20 transform translate-y-px"
             viewBox="0 0 24 24"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
