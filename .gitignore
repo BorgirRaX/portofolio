@@ -37,3 +37,8 @@ __screenshots__/
 
 # Vite
 *.timestamp-*-*.mjs
+
+# Planning Docs
+PRODUCT.md
+DESIGN.md
+portofolio-plan.md
